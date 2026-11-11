@@ -73,7 +73,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - run: npm ci
+      - name: Install frontend and Tauri CLI dependencies
+        run: npm ci --workspace @opentv/web --include-workspace-root
 
       - uses: tauri-apps/tauri-action@v0
         env:
@@ -121,7 +122,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - run: npm ci
+      - name: Install frontend and Tauri CLI dependencies
+        run: npm ci --workspace @opentv/web --include-workspace-root
 
       - name: Generate Android project
         run: |

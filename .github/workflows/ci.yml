@@ -97,7 +97,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - run: npm ci
+      - name: Install frontend and Tauri CLI dependencies
+        run: npm ci --workspace @opentv/web --include-workspace-root
 
       - name: Build web frontend
         run: npm run build -w @opentv/web
