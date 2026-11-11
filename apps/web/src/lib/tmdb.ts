@@ -188,6 +188,13 @@ export function playableSeasons(seasons: SeasonSummary[] | undefined): SeasonSum
     : list
 }
 
+export function pickSeason(seasons: SeasonSummary[], requested: string | null): number {
+  const first = seasons[0]?.season_number ?? 1
+  if (requested === null || requested.trim() === '') return first
+  const value = Number(requested)
+  return seasons.some((season) => season.season_number === value) ? value : first
+}
+
 export function dedupe(items: MediaSummary[]): MediaSummary[] {
   const seen = new Set<string>()
   return items.filter((item) => {

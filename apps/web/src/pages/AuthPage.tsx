@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import { Eye, EyeOff } from 'lucide-react'
-import { type FormEvent, useState } from 'react'
+import { type SubmitEvent, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router'
 import { Button } from '@/components/ui/Button'
 import { Field } from '@/components/ui/Field'
+import { ChangeServerLink } from '@/components/layout/ServerSwitch'
 import { Logo } from '@/components/ui/Logo'
 import { Spinner } from '@/components/ui/Spinner'
 import { useAuthActions, useUser } from '@/hooks/useAuth'
@@ -60,7 +61,7 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
 
   if (user) return <Navigate to={from} replace />
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = (event: SubmitEvent) => {
     event.preventDefault()
     setLocalError(null)
     const name = username.trim()
@@ -187,6 +188,7 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
         <p className="mt-6 text-center text-xs text-ink-500">
           No email needed. Just a username and a password.
         </p>
+        <ChangeServerLink className="mt-3 text-center" />
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ import {
   Tv,
   UserX,
 } from 'lucide-react'
-import { type FormEvent, type ReactNode, useState } from 'react'
+import { type SubmitEvent, type ReactNode, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router'
 import { PageContainer } from '@/components/layout/AppLayout'
 import { Avatar } from '@/components/layout/UserMenu'
@@ -232,7 +232,7 @@ function ChangePassword() {
     onError: (error) => setMessage({ kind: 'error', text: errorMessage(error) }),
   })
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = (event: SubmitEvent) => {
     event.preventDefault()
     setMessage(null)
     if (next.length < 8) {

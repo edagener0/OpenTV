@@ -21,6 +21,7 @@ import {
   imageUrl,
   type MediaDetails,
   type MediaType,
+  pickSeason,
   pickTrailer,
   playableSeasons,
   titleOf,
@@ -121,12 +122,7 @@ function SeasonsSection({
 }) {
   const seasons = playableSeasons(details.seasons)
   const [searchParams, setSearchParams] = useSearchParams()
-  const latest = progressTitle.data?.[0]
-  const requested = Number(searchParams.get('season'))
-  const fallback = latest?.season ?? seasons[0]?.season_number ?? 1
-  const selected = seasons.some((season) => season.season_number === requested)
-    ? requested
-    : fallback
+  const selected = pickSeason(seasons, searchParams.get('season'))
   const season = useSeason(details.id, seasons.length > 0 ? selected : null)
 
   if (seasons.length === 0) return null

@@ -77,7 +77,7 @@ export function UserMenu() {
           {isTauri && (
             <Link to="/setup" role="menuitem" className={item} onClick={close}>
               <Server className="size-4" aria-hidden="true" />
-              Server settings
+              Change server
             </Link>
           )}
           <div className="my-1.5 h-px bg-white/5" />

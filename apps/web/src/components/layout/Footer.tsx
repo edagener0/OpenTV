@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { Logo } from '@/components/ui/Logo'
+import { ChangeServerLink } from './ServerSwitch'
 
 export function Footer() {
   return (
@@ -50,10 +51,13 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/5">
-        <p className="mx-auto max-w-[1800px] px-4 py-6 text-xs text-ink-500 sm:px-6 lg:px-10">
-          Metadata and images provided by TMDB. This product uses the TMDB API but is not endorsed
-          or certified by TMDB.
-        </p>
+        <div className="mx-auto flex max-w-[1800px] flex-col gap-3 px-4 py-6 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-10">
+          <p className="text-xs text-ink-500">
+            Metadata and images provided by TMDB. This product uses the TMDB API but is not endorsed
+            or certified by TMDB.
+          </p>
+          <ChangeServerLink className="shrink-0" />
+        </div>
       </div>
     </footer>
   )

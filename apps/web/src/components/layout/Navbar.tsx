@@ -1,8 +1,9 @@
 import clsx from 'clsx'
 import { Search } from 'lucide-react'
-import { type FormEvent, useEffect, useState } from 'react'
+import { type SubmitEvent, useEffect, useState } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router'
 import { Logo } from '@/components/ui/Logo'
+import { ServerSwitch } from './ServerSwitch'
 import { UserMenu } from './UserMenu'
 
 const NAV_LINKS = [
@@ -25,7 +26,7 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = (event: SubmitEvent) => {
     event.preventDefault()
     const value = query.trim()
     if (value) void navigate(`/search?q=${encodeURIComponent(value)}`)
@@ -95,6 +96,7 @@ export function Navbar() {
           >
             <Search className="size-5" aria-hidden="true" />
           </Link>
+          <ServerSwitch />
           <UserMenu />
         </div>
       </nav>

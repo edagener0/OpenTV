@@ -122,7 +122,7 @@ Download the installers from the GitHub Releases page:
 | Linux    | `.AppImage`, `.deb`, `.rpm`              |
 | Android  | `.apk` (sideload), `.aab` (Play Console) |
 
-On first launch, the app asks for your server address, such as `https://tv.example.com` or `192.168.1.20:8080`. You can change it later from the account menu.
+On first launch, the app asks for your server address, such as `https://tv.example.com` or `192.168.1.20:8080`. You can switch servers at any time, signed in or not, from the server button in the top bar, the "Change server" link on the sign-in page or the footer. Previously used servers are saved for one-tap switching, and each server keeps its own session.
 
 The apps send API requests through Tauri's Rust HTTP client. Its cookie jar keeps the same http-only JWT cookie the browser uses, and saves it to the app's data directory. Sessions therefore survive restarts without exposing the token to JavaScript, and the same server works for the web and the apps without CORS configuration.
 
