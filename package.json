@@ -1,0 +1,26 @@
+{
+  "name": "opentv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A self-hostable streaming hub for movies and TV shows.",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "apps/server",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,web -c magenta,cyan \"npm run dev -w @opentv/server\" \"npm run dev -w @opentv/web\"",
+    "build": "npm run build -w @opentv/web && npm run build -w @opentv/server",
+    "start": "npm run start -w @opentv/server",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm run test --workspaces",
+    "tauri": "tauri"
+  }
+}

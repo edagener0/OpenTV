@@ -1,0 +1,242 @@
+{
+  "providers": [
+    {
+      "id": "vidlink",
+      "name": "VidLink",
+      "recommended": true,
+      "movie": "https://vidlink.pro/movie/{id}",
+      "tv": "https://vidlink.pro/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidfast",
+      "name": "VidFast",
+      "recommended": true,
+      "movie": "https://vidfast.pro/movie/{id}",
+      "tv": "https://vidfast.pro/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidsrc-mov",
+      "name": "vidsrc.mov",
+      "movie": "https://vidsrc.mov/embed/movie/{id}",
+      "tv": "https://vidsrc.mov/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidsrc-fyi",
+      "name": "VidSrc.fyi",
+      "movie": "https://vidsrc.fyi/embed/movie/{id}",
+      "tv": "https://vidsrc.fyi/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidup",
+      "name": "VidUp",
+      "movie": "https://vidup.to/movie/{id}",
+      "tv": "https://vidup.to/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidrock",
+      "name": "VidRock",
+      "movie": "https://vidrock.net/movie/{id}",
+      "tv": "https://vidrock.net/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidnest",
+      "name": "Vidnest",
+      "movie": "https://vidnest.fun/movie/{id}",
+      "tv": "https://vidnest.fun/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "111movies",
+      "name": "111Movies",
+      "movie": "https://111movies.net/movie/{id}",
+      "tv": "https://111movies.net/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "multiembed",
+      "name": "MultiEmbed",
+      "movie": "https://multiembed.mov/?video_id={id}&tmdb=1",
+      "tv": "https://multiembed.mov/?video_id={id}&tmdb=1&s={season}&e={episode}"
+    },
+    {
+      "id": "mappletv",
+      "name": "MappleTV",
+      "movie": "https://mapple.uk/watch/movie/{id}",
+      "tv": "https://mapple.uk/watch/tv/{id}-{season}-{episode}"
+    },
+    {
+      "id": "moviesapi",
+      "name": "MoviesAPI",
+      "movie": "https://moviesapi.club/movie/{id}",
+      "tv": "https://moviesapi.club/tv/{id}-{season}-{episode}"
+    },
+    {
+      "id": "vidzee",
+      "name": "VidZee",
+      "movie": "https://player.vidzee.wtf/embed/movie/{id}",
+      "tv": "https://player.vidzee.wtf/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidrift",
+      "name": "VidRift",
+      "movie": "https://vidrift.cc/embed/movie/{id}",
+      "tv": "https://vidrift.cc/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidsrc-sh",
+      "name": "VidSrc.sh",
+      "movie": "https://vidsrc.sh/embed/movie/{id}",
+      "tv": "https://vidsrc.sh/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidsrc-su",
+      "name": "VidSrc.su",
+      "movie": "https://vidsrc.su/embed/movie/{id}",
+      "tv": "https://vidsrc.su/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidsrc-buzz",
+      "name": "VidSrc.buzz",
+      "movie": "https://vidsrc.buzz/embed/movie/{id}",
+      "tv": "https://vidsrc.buzz/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "apiplayer",
+      "name": "APIPlayer",
+      "movie": "https://apiplayer.ru/embed/movie/{id}",
+      "tv": "https://apiplayer.ru/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "nontongo",
+      "name": "NontonGo",
+      "movie": "https://www.nontongo.win/embed/movie/{id}",
+      "tv": "https://www.nontongo.win/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidapi-xyz",
+      "name": "VidAPI.xyz",
+      "movie": "https://vidapi.xyz/embed/movie/{id}",
+      "tv": "https://vidapi.xyz/embed/tv/{id}&s={season}&e={episode}"
+    },
+    {
+      "id": "vidapi-ru",
+      "name": "VidAPI.ru",
+      "movie": "https://vidapi.ru/embed/movie/{id}",
+      "tv": "https://vidapi.ru/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidcore-org",
+      "name": "VidCore.org",
+      "movie": "https://vidcore.org/embed/movie/{id}",
+      "tv": "https://vidcore.org/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidcore-io",
+      "name": "VidCore.io",
+      "movie": "https://vidcore.io/embed/movie/{id}",
+      "tv": "https://vidcore.io/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vixsrc",
+      "name": "VixSrc",
+      "language": "Italian",
+      "movie": "https://vixsrc.to/movie/{id}",
+      "tv": "https://vixsrc.to/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "embedbandit",
+      "name": "EmbedBandit",
+      "movie": "https://embedbandit.com/embed/movie/{id}",
+      "tv": "https://embedbandit.com/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidlux",
+      "name": "VidLux",
+      "movie": "https://vidlux.xyz/embed/movie/{id}",
+      "tv": "https://vidlux.xyz/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidspark",
+      "name": "VidSpark",
+      "movie": "https://vidspark.net/embed/movie/{id}",
+      "tv": "https://vidspark.net/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "embed-api",
+      "name": "Embed-API",
+      "movie": "https://embed-api.stream/movie/{id}",
+      "tv": "https://embed-api.stream/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidzen",
+      "name": "VidZen",
+      "movie": "https://vidzen.fun/movie/{id}",
+      "tv": "https://vidzen.fun/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "cinextream",
+      "name": "Cinextream",
+      "movie": "https://cinextream.com/embed/movie/{id}",
+      "tv": "https://cinextream.com/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "yapgrid",
+      "name": "YapGrid",
+      "movie": "https://yapgrid.com/embed/movie/{id}",
+      "tv": "https://yapgrid.com/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "vidbolt",
+      "name": "VidBolt",
+      "movie": "https://vidbolt.cc/embed/movie/{id}",
+      "tv": "https://vidbolt.cc/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "net79",
+      "name": "Net79",
+      "movie": "https://net79.xyz/embed/movie/{id}",
+      "tv": "https://net79.xyz/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "embedmaster",
+      "name": "EmbedMaster",
+      "movie": "https://embedmaster.link/movie/{id}",
+      "tv": "https://embedmaster.link/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "screenscape",
+      "name": "Screenscape",
+      "movie": "https://screenscape.me/embed?tmdb={id}&type=movie",
+      "tv": "https://screenscape.me/embed?tmdb={id}&type=tv&s={season}&e={episode}"
+    },
+    {
+      "id": "rivestream",
+      "name": "RiveStream",
+      "movie": "https://rivestream.org/embed?type=movie&id={id}",
+      "tv": "https://rivestream.org/embed?type=tv&id={id}&season={season}&episode={episode}"
+    },
+    {
+      "id": "2embed",
+      "name": "2Embed",
+      "movie": "https://www.2embed.cc/embed/{id}",
+      "tv": "https://www.2embed.cc/embedtv/{id}&s={season}&e={episode}"
+    },
+    {
+      "id": "autoembed",
+      "name": "AutoEmbed",
+      "movie": "https://player.autoembed.cc/embed/movie/{id}",
+      "tv": "https://player.autoembed.cc/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "megaembed",
+      "name": "MegaEmbed",
+      "movie": "https://megaembed.xyz/embed/movie/{id}",
+      "tv": "https://megaembed.xyz/embed/tv/{id}/{season}/{episode}"
+    },
+    {
+      "id": "frembed",
+      "name": "Frembed",
+      "language": "French",
+      "movie": "https://frembed.bond/api/film.php?id={id}",
+      "tv": "https://frembed.bond/api/serie.php?id={id}&sa={season}&epi={episode}"
+    }
+  ]
+}
