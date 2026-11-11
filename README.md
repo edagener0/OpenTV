@@ -4,7 +4,7 @@ The platform should be made in Tauri with Typescript and React
 Write a github CI workflow.
 Also write a workflow that upon execution compiles the app to desktop (windows, mac, linux) and mobile (android). The app should also work on the web with docker compose.
 Users may watch movies or TV shows unauthenticated but if they do authenticate they can see what they were watching, favorite some shows and see some other relevant statistics.
-For authentication user should only provide Username and Password (for  registration and login).
+For authentication user should only provide Username and Password (for registration and login).
 I want the website to be responsive and have a polished design just like [FlixMuffin](https://flixmuffin.st) or [HydraHD](https://hydrahd.gd/).
 Should be able to browse for content and everything else.
 Do not include comments or emojis in the code.

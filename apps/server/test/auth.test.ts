@@ -1,5 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { clientHeaders, createTestApp, registerUser, sessionCookie, type TestContext } from './helpers.js'
+import {
+  clientHeaders,
+  createTestApp,
+  registerUser,
+  sessionCookie,
+  type TestContext,
+} from './helpers.js'
 
 describe('auth', () => {
   let ctx: TestContext

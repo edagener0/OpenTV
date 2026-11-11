@@ -17,6 +17,8 @@ const ALLOWED_PARAMS = new Set([
   'first_air_date_year',
   'vote_count.gte',
   'vote_average.gte',
+  'primary_release_date.lte',
+  'first_air_date.lte',
   'with_original_language',
   'with_networks',
   'with_companies',

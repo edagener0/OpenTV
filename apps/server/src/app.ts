@@ -32,9 +32,9 @@ export interface BuildOptions {
 
 function readVersion(): string {
   try {
-    const pkg = JSON.parse(
-      readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
-    ) as { version?: string }
+    const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as {
+      version?: string
+    }
     return pkg.version ?? '0.0.0'
   } catch {
     return '0.0.0'
@@ -59,7 +59,11 @@ export async function buildApp(options: BuildOptions): Promise<FastifyInstance> 
         ? false
         : {
             level: config.logLevel,
-            redact: ['req.headers.cookie', 'req.headers.authorization', 'res.headers["set-cookie"]'],
+            redact: [
+              'req.headers.cookie',
+              'req.headers.authorization',
+              'res.headers["set-cookie"]',
+            ],
           },
     trustProxy: config.trustProxy,
     bodyLimit: 64 * 1024,
@@ -118,7 +122,9 @@ export async function buildApp(options: BuildOptions): Promise<FastifyInstance> 
 
   app.setErrorHandler((error, request, reply) => {
     if (error instanceof HttpError) {
-      return reply.code(error.statusCode).send({ error: { code: error.code, message: error.message } })
+      return reply
+        .code(error.statusCode)
+        .send({ error: { code: error.code, message: error.message } })
     }
     const status = (error as { statusCode?: number }).statusCode ?? 500
     if (status >= 500) {

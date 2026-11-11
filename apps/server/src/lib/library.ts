@@ -402,8 +402,7 @@ export class LibraryService {
     }
 
     const user = this.db.prepare('SELECT created_at FROM users WHERE id = ?').get(userId) as
-      | { created_at: number }
-      | undefined
+      { created_at: number } | undefined
 
     return {
       totalSeconds: totals.totalSeconds,

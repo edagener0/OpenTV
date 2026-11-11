@@ -20,7 +20,10 @@ describe('TmdbClient', () => {
 
   it('caches successful responses and deduplicates concurrent requests', async () => {
     const fetchImpl = vi.fn(async () => Response.json({ results: [] }))
-    const client = new TmdbClient({ apiKey: 'key', fetchImpl: fetchImpl as unknown as typeof fetch })
+    const client = new TmdbClient({
+      apiKey: 'key',
+      fetchImpl: fetchImpl as unknown as typeof fetch,
+    })
     await Promise.all([client.get('movie/popular', {}), client.get('movie/popular', {})])
     await client.get('movie/popular', {})
     expect(fetchImpl).toHaveBeenCalledTimes(1)

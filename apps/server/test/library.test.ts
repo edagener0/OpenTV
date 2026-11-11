@@ -110,7 +110,11 @@ describe('library', () => {
     })
     expect(after.json().items.map((item: { tmdbId: number }) => item.tmdbId)).toEqual([1399])
 
-    const stats = await ctx.app.inject({ method: 'GET', url: '/api/library/stats', headers: { cookie } })
+    const stats = await ctx.app.inject({
+      method: 'GET',
+      url: '/api/library/stats',
+      headers: { cookie },
+    })
     const body = stats.json()
     expect(body.totalSeconds).toBe(150)
     expect(body.moviesWatched).toBe(1)

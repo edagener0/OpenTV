@@ -71,8 +71,7 @@ export class AuthService {
 
   async login(username: string, password: string): Promise<SessionUser> {
     const row = this.db.prepare('SELECT * FROM users WHERE username = ?').get(username) as
-      | UserRow
-      | undefined
+      UserRow | undefined
     const valid = row
       ? await verify(row.password_hash, password)
       : await verify(await this.dummyHash, password).then(() => false)
@@ -84,23 +83,19 @@ export class AuthService {
 
   async changePassword(userId: number, current: string, next: string): Promise<void> {
     const row = this.db.prepare('SELECT * FROM users WHERE id = ?').get(userId) as
-      | UserRow
-      | undefined
+      UserRow | undefined
     if (!row || !(await verify(row.password_hash, current))) {
       throw new HttpError(401, 'Current password is incorrect', 'INVALID_CREDENTIALS')
     }
     const passwordHash = await hash(next, HASH_OPTIONS)
     this.db
-      .prepare(
-        'UPDATE users SET password_hash = ?, token_version = token_version + 1 WHERE id = ?',
-      )
+      .prepare('UPDATE users SET password_hash = ?, token_version = token_version + 1 WHERE id = ?')
       .run(passwordHash, userId)
   }
 
   async deleteAccount(userId: number, password: string): Promise<void> {
     const row = this.db.prepare('SELECT * FROM users WHERE id = ?').get(userId) as
-      | UserRow
-      | undefined
+      UserRow | undefined
     if (!row || !(await verify(row.password_hash, password))) {
       throw new HttpError(401, 'Password is incorrect', 'INVALID_CREDENTIALS')
     }
@@ -113,8 +108,7 @@ export class AuthService {
 
   async issueSession(request: FastifyRequest, reply: FastifyReply, userId: number): Promise<void> {
     const row = this.db.prepare('SELECT token_version FROM users WHERE id = ?').get(userId) as
-      | Pick<UserRow, 'token_version'>
-      | undefined
+      Pick<UserRow, 'token_version'> | undefined
     if (!row) throw new HttpError(404, 'User not found', 'NOT_FOUND')
     const maxAge = this.config.sessionDays * 24 * 60 * 60
     const token = await new SignJWT({ ver: row.token_version })
