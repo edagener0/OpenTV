@@ -15,3 +15,4 @@ data/
 src-tauri/target/
 src-tauri/gen/
 *.tsbuildinfo
+src-tauri/icons/ios/

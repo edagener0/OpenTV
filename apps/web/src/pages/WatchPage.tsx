@@ -299,7 +299,8 @@ export function WatchPage({ mediaType }: { mediaType: MediaType }) {
                   seasons={seasons}
                   value={seasonNumber}
                   onChange={(value) => void navigate(`/watch/tv/${id}/${value}/1`)}
-                  className="w-48"
+                  className="w-40"
+                  compact
                 />
               )}
             </div>

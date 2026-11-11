@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { Check, ChevronDown, Play } from 'lucide-react'
+import { Check, ChevronDown, Film, Play } from 'lucide-react'
 import { Link } from 'react-router'
 import { formatDate, formatRuntime } from '@/lib/format'
 import type { ProgressEntry } from '@/lib/library'
@@ -10,11 +10,13 @@ export function SeasonSelect({
   value,
   onChange,
   className,
+  compact,
 }: {
   seasons: SeasonSummary[]
   value: number
   onChange: (season: number) => void
   className?: string
+  compact?: boolean
 }) {
   return (
     <label className={clsx('relative block', className)}>
@@ -26,8 +28,8 @@ export function SeasonSelect({
       >
         {seasons.map((season) => (
           <option key={season.id} value={season.season_number}>
-            {season.season_number === 0 ? 'Specials' : `Season ${season.season_number}`} ·{' '}
-            {season.episode_count} episodes
+            {season.season_number === 0 ? 'Specials' : `Season ${season.season_number}`}
+            {compact ? '' : ` · ${season.episode_count} episodes`}
           </option>
         ))}
       </select>
@@ -83,7 +85,13 @@ export function EpisodeList({
                   unreleased && 'opacity-50',
                 )}
               >
-                <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-lg bg-ink-800">
+                <div className="relative aspect-video w-28 shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-ink-750 to-ink-850">
+                  {!episode.still_path && (
+                    <Film
+                      className="absolute inset-0 m-auto size-5 text-ink-500"
+                      aria-hidden="true"
+                    />
+                  )}
                   {episode.still_path && (
                     <img
                       src={imageUrl(episode.still_path, 'w300') ?? ''}
@@ -152,7 +160,13 @@ export function EpisodeList({
                 unreleased && 'opacity-60',
               )}
             >
-              <div className="relative aspect-video overflow-hidden bg-ink-800">
+              <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-ink-750 to-ink-850">
+                {!episode.still_path && (
+                  <Film
+                    className="absolute inset-0 m-auto size-8 text-ink-500"
+                    aria-hidden="true"
+                  />
+                )}
                 {episode.still_path && (
                   <img
                     src={imageUrl(episode.still_path, 'w780') ?? ''}

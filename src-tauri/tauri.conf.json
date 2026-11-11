@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "OpenTV",
+  "version": "1.0.0",
+  "identifier": "dev.opentv.app",
+  "build": {
+    "beforeDevCommand": "npm run dev -w @opentv/web",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build -w @opentv/web",
+    "frontendDist": "../apps/web/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "OpenTV",
+        "width": 1360,
+        "height": 860,
+        "minWidth": 380,
+        "minHeight": 600,
+        "center": true,
+        "backgroundColor": "#0a0a14"
+      }
+    ],
+    "security": {
+      "csp": {
+        "default-src": "'self' ipc: http://ipc.localhost",
+        "connect-src": "'self' ipc: http://ipc.localhost",
+        "img-src": "'self' data: https://image.tmdb.org",
+        "style-src": "'self' 'unsafe-inline'",
+        "font-src": "'self' data:",
+        "frame-src": "https:",
+        "media-src": "'self' blob: https:"
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Entertainment",
+    "shortDescription": "Self-hosted movies and TV hub",
+    "longDescription": "OpenTV is a client for self-hosted OpenTV servers. Discover, track and stream movies and TV shows.",
+    "copyright": "OpenTV contributors",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "linux": {
+      "deb": {
+        "section": "video"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+**/node_modules
+**/dist
+**/coverage
+**/*.log
+.git
+.github
+.vscode
+.idea
+data
+src-tauri
+assets
+*.md
+.env
+.env.*
+!.env.example
+Dockerfile
+docker-compose.yml

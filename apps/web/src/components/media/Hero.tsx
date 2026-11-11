@@ -88,7 +88,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/20 to-ink-900/40" />
 
-      <div className="relative mx-auto flex h-full max-w-[1800px] items-end px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10 lg:pb-28">
+      <div className="relative mx-auto flex h-full max-w-[1800px] items-end px-4 pb-24 sm:px-6 lg:px-10 lg:pb-32">
         <div key={current.id} className="max-w-2xl animate-rise">
           <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold">
             <span className="rounded-full bg-brand-500/20 px-3 py-1 uppercase tracking-wider text-brand-200 ring-1 ring-brand-400/30 backdrop-blur-md">
@@ -127,7 +127,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-0 right-0 mx-auto flex max-w-[1800px] justify-center gap-2 px-4 sm:justify-end sm:px-6 lg:bottom-10 lg:px-10">
+      <div className="absolute bottom-12 left-0 right-0 mx-auto flex max-w-[1800px] justify-center gap-2 px-4 sm:justify-end sm:px-6 lg:bottom-20 lg:px-10">
         {slides.map((slide, index) => (
           <button
             key={slide.id}

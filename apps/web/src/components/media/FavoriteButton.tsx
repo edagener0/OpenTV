@@ -29,19 +29,19 @@ export function FavoriteButton({ mediaType, tmdbId, payload, compact }: Favorite
   return (
     <Button
       variant="secondary"
-      size="lg"
+      size={compact ? 'md' : 'lg'}
       onClick={onClick}
       aria-pressed={favorite.isFavorite}
       aria-label={label}
       title={label}
       className={clsx(
-        compact && 'w-12 px-0',
+        compact && 'w-11 !px-0',
         favorite.isFavorite && '!bg-accent-500/20 !ring-accent-500/40',
       )}
     >
       <Heart
         className={clsx(
-          'size-5 transition',
+          'size-5 shrink-0 transition',
           favorite.isFavorite ? 'scale-110 fill-accent-500 text-accent-500' : 'text-white',
         )}
         aria-hidden="true"

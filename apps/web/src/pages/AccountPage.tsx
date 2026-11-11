@@ -69,6 +69,10 @@ function StatTile({
   )
 }
 
+function plural(count: number, noun: string): string {
+  return `${count} ${noun}${count === 1 ? '' : 's'}`
+}
+
 const shortDay = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric',
@@ -388,7 +392,7 @@ export function AccountPage() {
                 icon={Clock}
                 label="Total watch time"
                 value={formatWatchTime(stats.data.totalSeconds)}
-                hint={`${stats.data.completed} titles finished`}
+                hint={`${plural(stats.data.completed, 'title')} finished`}
               />
             </div>
             <StatTile icon={Clapperboard} label="Movies" value={String(stats.data.moviesWatched)} />
@@ -396,14 +400,14 @@ export function AccountPage() {
               icon={Tv}
               label="Series"
               value={String(stats.data.showsWatched)}
-              hint={`${stats.data.episodesWatched} episodes`}
+              hint={plural(stats.data.episodesWatched, 'episode')}
             />
             <StatTile icon={Flame} label="Day streak" value={String(stats.data.streak)} />
             <StatTile
               icon={Heart}
               label="Favorites"
               value={String(stats.data.favorites.movies + stats.data.favorites.shows)}
-              hint={`${stats.data.favorites.movies} movies · ${stats.data.favorites.shows} series`}
+              hint={`${plural(stats.data.favorites.movies, 'movie')} · ${stats.data.favorites.shows} series`}
             />
           </div>
           <div className="mt-6 grid gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">

@@ -60,7 +60,10 @@ function resolveJwtSecret(dataDir: string, provided: string | undefined): Uint8A
 }
 
 export function loadConfig(source: NodeJS.ProcessEnv = process.env): AppConfig {
-  const parsed = envSchema.safeParse(source)
+  const defined = Object.fromEntries(
+    Object.entries(source).filter(([, value]) => value !== undefined && value.trim() !== ''),
+  )
+  const parsed = envSchema.safeParse(defined)
   if (!parsed.success) {
     const details = parsed.error.issues
       .map((issue) => `${issue.path.join('.')}: ${issue.message}`)
